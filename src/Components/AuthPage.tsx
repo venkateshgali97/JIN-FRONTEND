@@ -2,6 +2,7 @@ import "../Styles/AuthPage.css"
 import { useState } from "react";
 import Signin from "./Signin";
 import Signup from "./Signup";
+import { Link, Routes,Route } from "react-router-dom";
 const AuthPage = () =>{
     const [signInPageStatus,setSignInPageStatus] = useState<Boolean>(false)
     return(
@@ -13,7 +14,7 @@ const AuthPage = () =>{
                         
                     }
                       } className={`${signInPageStatus ? 'active' : ''}`}>
-                            Sign in
+                           Sign in 
                     </button>
                     <button onClick={() => {
                        setSignInPageStatus(false)
@@ -22,7 +23,7 @@ const AuthPage = () =>{
                </div>
                 {(signInPageStatus) ? <Signin /> : <Signup />}
             </div>
-            
+          
         </div>
         
     )

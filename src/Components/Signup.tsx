@@ -44,7 +44,7 @@ const Signup = () =>{
                 body :  JSON.stringify(signupDetails)   
             }
            
-            fetch("http://localhost:8000/newUser",options).then((res) =>{
+            fetch("http://localhost:8001/newUser",options).then((res) =>{
                 if(res.status == 201){
                     toast.success("Registration Successful")           
                 }

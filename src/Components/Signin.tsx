@@ -1,5 +1,6 @@
 import '../Styles/Signin.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import {  toast } from 'react-toastify';
 
 interface signInDetails{
@@ -11,6 +12,7 @@ const Signin =()=>{
         "email":'',
         "password":''
     })
+    const navigate = useNavigate()
     const signInInputHandler = (e:React. ChangeEvent<HTMLInputElement>) =>{
         console.log(e.target.id)
         setSignInDetails({...signInDetails,[e.target.id] : e.target.value})
@@ -33,12 +35,14 @@ const Signin =()=>{
                 },
                 body :  JSON.stringify(signInDetails)   
             }
-            fetch("http://localhost:8000/login",options).then((res) =>{
+            fetch("http://localhost:8001/login",options).then((res) =>{
                 if(res.status == 400){
                     toast.warning("Email is Not found")           
                 }
                 else if(res.status == 201){
                     toast.success("Login successful")
+                    navigate("/profile")
+                    localStorage.setItem("user",email)
                 }else if (res.status == 404){
                     toast.warning("Login Failed...")
                 }

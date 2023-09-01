@@ -43,6 +43,12 @@
   padding-right: 5rem;
 }
 
+
+.auth-container-button button a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: black;
+}
 .active{
   background-color: #fa4299;
   color:white;

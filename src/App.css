@@ -37,3 +37,6 @@
     border: 0;
     outline: 0;
 }
+.Toastify__toast-icon div{
+    font-size: 2rem !important;
+}

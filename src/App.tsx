@@ -8,8 +8,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () =>{
   return(
-    <AuthPage />
-    // <Profile />
+    // <AuthPage />
+    // // <Profile />
+    <BrowserRouter>
+       <Routes>
+          <Route path='/' element={<AuthPage />}></Route>
+          <Route path='/profile' element={<Profile />}></Route>
+        
+       </Routes>
+    </BrowserRouter>
 
   )
 }
